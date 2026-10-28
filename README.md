@@ -1,45 +1,27 @@
-# Clinical Pharmacology EBM Group Website
+# CAPTURE Evidence & Clinical Pharmacology Foundation website
 
-A static, GitHub Pages-compatible website for the Clinical Pharmacology EBM Group.
+Static HTML / CSS / JavaScript bilingual website. No framework, CMS, backend or build step.
 
-## Navigation
+## Page structure
+- English: `/` and `/pages/*.html`
+- Chinese: `/zh/` and `/zh/pages/*.html`
+- All six top navigation items have English and Chinese counterparts.
+- Old `/pages/*.html` routes are retained as minimal compatibility redirects.
 
-- Home
-- About
-  - Mission & Vision
-  - Governance
-  - Steering Committee
-  - History
-  - Future Directions
-- Methods
-- Evidence & Guidelines
-- Publications
-- Education
-- Working Groups
-  - Working Groups Overview
-  - Experts Directory
-  - Proposed topic-area working groups
-- Partners
-- Contact
+## Deploying into the existing GitHub Pages repository
+1. Back up or commit any existing local work first. The previous repository had uncommitted edits to `index.html` and `css/style.css`; **do not overwrite them without a deliberate backup**.
+2. Use a new branch, e.g. `git switch -c capture-bilingual-redesign`, in the actual repository.
+3. Copy these release files into its root, preserving `CNAME`, `.nojekyll`, `css`, `js`, `pages`, and `zh`. Files in this bundle intentionally replace the old `index.html`, `css/style.css`, and `js/main.js`; any other pre-existing files remain until cleaned up.
+4. Start the local server (from repo root): `python -m http.server 8311` and open `http://localhost:8311`.
+5. Verify `/`, `/zh/`, page links, mobile menu, language switch, and legacy links before merging or pushing to `main`.
+6. No change to Namecheap DNS is required by this release. The GitHub Pages HTTPS checkbox / certificate status must be checked separately on GitHub.
 
-The site intentionally uses placeholder sections where experts, partners, publications, guidelines, governance details, and educational activities have not yet been confirmed.
+## Scientific publication safeguards
+- No invented experts, partners, funding, publications, completed projects, committee memberships or endorsements.
+- No unverified address, email or non-functional form is published.
+- Independent academic initiatives are not presented as owned or controlled by CAPTURE.
+- The Foundation is described as a Canadian federal not-for-profit, not a registered charity.
+- Any eventual publication/project listing needs verification and permission to publish.
 
-## Legacy URLs
-
-The previous `platform.html`, `consultancy.html`, `research.html`, and `advocacy.html` pages are retained as legacy notices so existing links do not immediately break.
-
-## Local Development
-
-```bash
-python start.py
-```
-
-Open `http://localhost:8311`. Press `Ctrl+C` to stop.
-
-## Deployment
-
-The site uses plain HTML, CSS, and JavaScript with no build step. Push the repository to a GitHub Pages-enabled branch when it is ready to publish.
-
-## Content Requirements
-
-Before launch, replace placeholders only with verified information. Do not add unconfirmed experts, partners, statistics, publications, guidelines, affiliations, or claims.
+## Files
+`CNAME`, `.nojekyll`, `404.html`, `robots.txt`, `sitemap.xml`, `assets/favicon.svg`, `css/style.css`, `js/main.js`, English and Chinese HTML pages, legacy redirect pages.

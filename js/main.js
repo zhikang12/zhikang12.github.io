@@ -1,61 +1,31 @@
-document.addEventListener("DOMContentLoaded", function () {
-  var toggle = document.querySelector(".nav-toggle");
-  var nav = document.querySelector(".nav");
-
-  if (toggle && nav) {
-    toggle.addEventListener("click", function () {
-      var open = nav.classList.toggle("open");
-      toggle.setAttribute("aria-expanded", String(open));
-    });
-  }
-
-  var current = window.location.pathname.split("/").pop() || "index.html";
-  var currentHash = window.location.hash;
-  if (!currentHash && current === "about.html") currentHash = "#mission";
-  if (!currentHash && current === "working-groups.html") currentHash = "#overview";
-
-  document.querySelectorAll(".nav a").forEach(function (link) {
-    var parts = link.getAttribute("href").split("#");
-    var linkPage = parts[0].split("/").pop();
-    var linkHash = parts[1] ? "#" + parts[1] : "";
-    var pageMatches = linkPage === current;
-    var linkMatches = pageMatches && ((!linkHash && !window.location.hash) || linkHash === currentHash);
-
-    if (linkMatches) {
-      link.classList.add("active");
-      link.setAttribute("aria-current", "page");
-    }
-
-    if (pageMatches) {
-      var parentGroup = link.closest(".nav-group");
-      if (parentGroup) parentGroup.querySelector(".nav-parent").classList.add("active");
+/* CAPTURE: intentionally dependency-free. */
+(() => {
+  'use strict';
+  const button = document.querySelector('[data-menu-toggle]');
+  const nav = document.getElementById('mobile-navigation');
+  if (!button || !nav) return;
+  const close = () => {
+    button.setAttribute('aria-expanded', 'false');
+    button.setAttribute('aria-label', document.documentElement.lang.startsWith('zh') ? '打开菜单' : 'Open menu');
+    nav.hidden = true;
+  };
+  button.addEventListener('click', () => {
+    const expanded = button.getAttribute('aria-expanded') === 'true';
+    if (expanded) close();
+    else {
+      button.setAttribute('aria-expanded', 'true');
+      button.setAttribute('aria-label', document.documentElement.lang.startsWith('zh') ? '关闭菜单' : 'Close menu');
+      nav.hidden = false;
     }
   });
-
-  document.querySelectorAll(".nav-parent").forEach(function (button) {
-    button.addEventListener("click", function () {
-      var group = button.closest(".nav-group");
-      var open = group.classList.toggle("open");
-      button.setAttribute("aria-expanded", String(open));
-    });
+  nav.querySelectorAll('a').forEach(link => link.addEventListener('click', close));
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') { close(); button.focus(); }
   });
-
-  document.addEventListener("click", function (event) {
-    document.querySelectorAll(".nav-group.open").forEach(function (group) {
-      if (!group.contains(event.target)) {
-        group.classList.remove("open");
-        group.querySelector(".nav-parent").setAttribute("aria-expanded", "false");
-      }
-    });
+  document.addEventListener('click', event => {
+    if (!nav.hidden && !nav.contains(event.target) && !button.contains(event.target)) close();
   });
-
-  document.querySelectorAll("form[data-demo-form]").forEach(function (form) {
-    form.addEventListener("submit", function (event) {
-      event.preventDefault();
-      var note = form.querySelector(".form-note");
-      if (note) {
-        note.textContent = "This form is a placeholder and is not connected to a submission service.";
-      }
-    });
+  window.matchMedia('(min-width: 1081px)').addEventListener('change', event => {
+    if (event.matches) close();
   });
-});
+})();
