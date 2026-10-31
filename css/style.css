@@ -15,3 +15,22 @@
 @media(max-width:375px){.brand-wordmark strong{font-size:1.03rem}.brand-wordmark small{font-size:.625rem;line-height:1.2}.brand-mark{width:34px;height:34px}.language-switch{font-size:.72rem}.container{width:calc(100% - 30px)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
 @media print{.site-header,.site-footer,.hero-art,.collab-band .btn,.skip-link{display:none!important}.section{padding:30px 0}.hero{background:#fff!important;color:#000!important}.info-card{break-inside:avoid}}
+
+
+/* Research publication archive: scholarly work is attributed to its original authors, not CAPTURE. */
+.research-disclaimer{max-width:1000px;margin:-13px 0 38px;padding:15px 19px;border-left:3px solid #679387;background:#edf3ee;color:#48616c;font-size:.92rem;line-height:1.75}
+.research-showcase{display:grid;gap:22px}.research-project{display:grid;grid-template-columns:minmax(260px,.9fr) minmax(0,1.4fr);gap:5%;background:#fff;border:1px solid var(--line);padding:36px 38px}
+.research-project-head h3{font-size:clamp(1.55rem,2.3vw,2.3rem);line-height:1.28;font-weight:610}
+.research-project-head p:not(.eyebrow){font-size:1rem;color:var(--muted);line-height:1.85;margin:17px 0 0}
+.research-project-works h4{font-size:.88rem;font-weight:750;letter-spacing:.035em;margin:0 0 16px;color:var(--ink)}
+.publication-count{font-weight:500;color:#617a77}
+.publication-list{list-style:none;margin:0;padding:0}.publication-item{padding:16px 0;border-top:1px solid var(--line)}
+.publication-item a{font-size:.94rem;font-weight:630;line-height:1.55;color:#215966;text-decoration:underline;text-decoration-color:#9bb8ae;text-underline-offset:3px}
+.publication-item a:hover{color:#0d423f;text-decoration-color:currentColor}
+.publication-meta{display:block;font-size:.8rem;color:#627783;line-height:1.6;margin:7px 0 0}
+.earlier-research{margin-top:48px;border-top:1px solid #b8cec4;padding:32px 0 0}
+.earlier-research h3{font-size:clamp(1.35rem,2vw,1.85rem);margin-bottom:13px}
+.earlier-research>p:not(.eyebrow):not(.publication-meta){max-width:900px;color:var(--muted)}
+.earlier-research .text-link{margin-top:0;max-width:920px}
+@media(max-width:850px){.research-project{grid-template-columns:1fr;gap:27px;padding:29px 26px}}
+@media(max-width:470px){.research-project{padding:24px 20px}.research-disclaimer{padding:13px 15px}.publication-item a{font-size:.91rem}}
