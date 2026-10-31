@@ -20,12 +20,12 @@
   });
   nav.querySelectorAll('a').forEach(link => link.addEventListener('click', close));
   document.addEventListener('keydown', event => {
-    if (event.key === 'Escape') { close(); button.focus(); }
+    if (event.key === 'Escape' && !nav.hidden) { close(); button.focus(); }
   });
   document.addEventListener('click', event => {
     if (!nav.hidden && !nav.contains(event.target) && !button.contains(event.target)) close();
   });
-  window.matchMedia('(min-width: 1081px)').addEventListener('change', event => {
+  window.matchMedia('(min-width: 1321px)').addEventListener('change', event => {
     if (event.matches) close();
   });
 })();
