@@ -36,22 +36,17 @@
 @media(max-width:470px){.research-project{padding:24px 20px}.research-disclaimer{padding:13px 15px}.publication-item a{font-size:.91rem}}
 
 
-/* Independent academic expertise — no membership totals or institutional endorsement implied. */
-.academic-expertise{background:#f8faf7;border-top:1px solid var(--line)}
-.academic-expertise-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:stretch}
-.expertise-panel{display:flex;flex-direction:column;min-width:0;padding:34px 35px;background:#fff;border:1px solid var(--line);border-top:4px solid #517e73}
-.expertise-panel-ebm{border-top-color:#baa078}
-.expertise-panel .eyebrow{margin-bottom:17px}
-.expertise-panel h3{font-size:clamp(1.55rem,2.1vw,2.15rem);line-height:1.32;overflow-wrap:anywhere}
-.expertise-panel>p:not(.eyebrow){margin:18px 0 0;color:var(--muted);font-size:.98rem;line-height:1.82}
-.expertise-tags{display:flex;flex-wrap:wrap;list-style:none;gap:9px;padding:0;margin:24px 0 6px}
-.expertise-tags li{display:inline-flex;align-items:center;max-width:100%;padding:8px 12px;border:1px solid #d5e4dc;background:#edf5ee;border-radius:3px;color:#2e5a58;font-size:.83rem;font-weight:620;line-height:1.4}
-.expertise-panel .text-link{align-self:flex-start;margin-top:auto;padding-top:28px}
-.expertise-note{font-size:.84rem;color:#617783;max-width:960px;line-height:1.8;margin:22px 0 0}
+/* Research directions and international academic network, grouped by initiative. */
+.initiative-subheading{font-size:1.05rem;font-weight:750;letter-spacing:.015em;margin:29px 0 6px;color:#245362}
+.initiative-network{margin:29px 0 2px;padding:24px 26px 23px;border-left:3px solid #679587;background:#edf4ee}
+.initiative-network .eyebrow{margin:0 0 10px;font-size:.7rem;color:#416f6b}
+.initiative-detail .initiative-network p:not(.eyebrow){font-size:.96rem;color:#415f69;line-height:1.76;margin:0}
+.expertise-tags{display:flex;flex-wrap:wrap;list-style:none;gap:9px;padding:0;margin:19px 0 0}
+.expertise-tags li{display:inline-flex;align-items:center;max-width:100%;padding:8px 12px;border:1px solid #d5e4dc;background:#fff;border-radius:3px;color:#2e5a58;font-size:.83rem;font-weight:620;line-height:1.4}
 .expertise-detail-section{border-top:1px solid var(--line)}
 .expertise-detail{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:8%;align-items:center}
 .expertise-detail h2{font-size:clamp(2rem,3.2vw,3.15rem);line-height:1.2}
 .expertise-detail p:not(.eyebrow){color:var(--muted);font-size:1.02rem;line-height:1.9;margin:20px 0 0}
 .expertise-detail .expertise-tags{margin:0;align-content:start;justify-content:flex-start}
-@media(max-width:720px){.academic-expertise-grid,.expertise-detail{grid-template-columns:1fr;gap:16px}.expertise-panel{padding:27px 24px}.expertise-detail .expertise-tags{margin-top:11px}.expertise-tags li{font-size:.8rem}}
-@media(max-width:375px){.expertise-panel{padding:24px 19px}.expertise-tags{gap:7px}.expertise-tags li{padding:7px 9px}}
+@media(max-width:720px){.expertise-detail{grid-template-columns:1fr;gap:16px}.expertise-detail .expertise-tags{margin-top:11px}.expertise-tags li{font-size:.8rem}.initiative-network{padding:21px 19px}}
+@media(max-width:375px){.initiative-network{padding:18px 15px}.expertise-tags{gap:7px}.expertise-tags li{padding:7px 9px}}
